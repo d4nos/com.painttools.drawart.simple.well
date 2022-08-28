@@ -3,8 +3,15 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="..\:/Dev/Projects/Outsource/com.painttools.drawart.simple.well/app/src/main/res/drawable/ic_close.xml" value="0.265" />
         <entry key="..\:/Dev/Projects/Outsource/com.painttools.drawart.simple.well/app/src/main/res/drawable/minimize_select.xml" value="0.196" />
-        <entry key="..\:/Dev/Projects/Outsource/com.painttools.drawart.simple.well/app/src/main/res/layout/activity_main.xml" value="0.18802083333333333" />
+        <entry key="..\:/Dev/Projects/Outsource/com.painttools.drawart.simple.well/app/src/main/res/drawable/pallet_none.xml" value="0.265" />
+        <entry key="..\:/Dev/Projects/Outsource/com.painttools.drawart.simple.well/app/src/main/res/drawable/pallet_normal.xml" value="0.196" />
+        <entry key="..\:/Dev/Projects/Outsource/com.painttools.drawart.simple.well/app/src/main/res/drawable/pallet_pressed.xml" value="0.196" />
+        <entry key="..\:/Dev/Projects/Outsource/com.painttools.drawart.simple.well/app/src/main/res/drawable/pro_shap_selected.xml" value="0.265" />
+        <entry key="..\:/Dev/Projects/Outsource/com.painttools.drawart.simple.well/app/src/main/res/drawable/small.xml" value="0.196" />
+        <entry key="..\:/Dev/Projects/Outsource/com.painttools.drawart.simple.well/app/src/main/res/layout/activity_main.xml" value="0.33" />
+        <entry key="..\:/Dev/Projects/Outsource/com.painttools.drawart.simple.well/app/src/main/res/layout/activity_splash.xml" value="0.365625" />
         <entry key="..\:/Dev/Projects/Outsource/com.painttools.drawart.simple.well/app/src/main/res/layout/activity_vip.xml" value="0.36666666666666664" />
         <entry key="..\:/Dev/Projects/Outsource/com.painttools.drawart.simple.well/app/src/main/res/layout/dailog_brush_size.xml" value="0.36666666666666664" />
         <entry key="..\:/Dev/Projects/Outsource/com.painttools.drawart.simple.well/app/src/main/res/layout/minimize_pro.xml" value="0.36666666666666664" />

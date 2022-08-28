@@ -3,7 +3,7 @@ package com.painttools.drawart.simple.well.drawartdonate;
 import android.util.Log;
 
 public class DrawArtProLog {
-    private static final String TAG = "minimizing: ";
+    private static final String TAG = "pro_paint_simple: ";
 
 
     public static void debug(int intValue) {

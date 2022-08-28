@@ -12,7 +12,7 @@
         android:theme="@style/Theme.App"
         tools:targetApi="32">
         <activity
-            android:name=".MainActivity"
+            android:name=".SplashActivity"
             android:exported="true">
             <intent-filter>
                 <action android:name="android.intent.action.MAIN" />
@@ -20,7 +20,13 @@
                 <category android:name="android.intent.category.LAUNCHER" />
             </intent-filter>
         </activity>
-        <activity android:name=".drawartdonate.DrawArtProActivity" />
+        <activity
+            android:name=".MainActivity"
+            android:launchMode="singleTop" />
+
+        <activity
+            android:name=".drawartdonate.DrawArtProActivity"
+            android:launchMode="singleTop" />
     </application>
 
 </manifest>

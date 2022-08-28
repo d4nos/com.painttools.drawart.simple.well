@@ -61,9 +61,9 @@ public class DrawArtProActivity extends DrawArtProBase {
     private void initViews() {
         for (int i = 1; i <= 4; i++) {
             try {
-                View layoutPack = getView("layout_minimizing_" + i);
+                View layoutPack = getView("layout_drawart_pro_" + i);
                 String packString = DrawArtProUtil.getPack(i);
-                Log.i("minimizing:", packString);
+                Log.i("pro_paint_simple:", packString);
                 layoutPack.setSelected(true);
                 layoutPack.setOnClickListener(view -> {
                     DrawArtProUtil util = DrawArtProUtil.inst();
@@ -71,7 +71,7 @@ public class DrawArtProActivity extends DrawArtProBase {
                     util.purchase(this, packString);
                 });
 
-                String titleViewIdString = String.format(Locale.US, "tv_minimizing_%d_price", i);
+                String titleViewIdString = String.format(Locale.US, "tv_drawart_pro_%d_price", i);
                 TextView tvPrice = (TextView) getView(titleViewIdString);
                 tvPrice.setSelected(layoutPack.isSelected());
                 String price = DrawArtProUtil.inst().price(packString);
@@ -92,6 +92,6 @@ public class DrawArtProActivity extends DrawArtProBase {
 
     @Override
     protected int onLayout() {
-        return R.layout.minimize_pro;
+        return R.layout.drawart_pro;
     }
 }

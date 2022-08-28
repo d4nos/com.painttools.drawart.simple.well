@@ -6,23 +6,72 @@
     android:layout_height="match_parent"
     tools:context=".MainActivity">
 
+    <LinearLayout
+        android:id="@+id/ll_action_buttons"
+        android:layout_width="match_parent"
+        android:layout_height="wrap_content"
+        android:gravity="center"
+        app:layout_constraintLeft_toLeftOf="parent"
+        app:layout_constraintRight_toRightOf="parent"
+        app:layout_constraintTop_toBottomOf="@id/ll_paint_colors"
+        app:layout_constraintTop_toTopOf="parent">
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/ib_brush"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/drawart_brush" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/ib_undo"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/drawart_undo" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/ib_gallery"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/drawart_gallery" />
+
+        <androidx.appcompat.widget.AppCompatImageButton
+            android:id="@+id/ib_save"
+            android:layout_width="50dp"
+            android:layout_height="50dp"
+            android:layout_margin="5dp"
+            android:scaleType="fitXY"
+            android:src="@drawable/drawart_save" />
+    </LinearLayout>
+
+    <androidx.appcompat.widget.AppCompatImageView
+        android:id="@+id/bt_vip"
+        android:layout_width="40dp"
+        android:layout_height="40dp"
+        android:layout_marginStart="8dp"
+        app:layout_constraintBottom_toBottomOf="@+id/ll_action_buttons"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:srcCompat="@drawable/drawart_donate" />
+
     <FrameLayout
         android:id="@+id/fl_drawing_view_container"
         android:layout_width="0dp"
         android:layout_height="0dp"
-        android:layout_margin="5dp"
-        android:background="@drawable/background_drawing_view_layout"
-        android:padding="1dp"
         app:layout_constraintBottom_toTopOf="@id/ll_paint_colors"
         app:layout_constraintEnd_toEndOf="parent"
         app:layout_constraintStart_toStartOf="parent"
-        app:layout_constraintTop_toTopOf="parent">
+        app:layout_constraintTop_toBottomOf="@+id/ll_action_buttons">
 
         <ImageView
             android:id="@+id/iv_backgroud"
             android:layout_width="match_parent"
             android:layout_height="match_parent"
-            android:contentDescription="backgroud description"
             android:scaleType="fitCenter" />
 
         <com.painttools.drawart.simple.well.DrawArtView
@@ -31,11 +80,7 @@
             android:layout_height="match_parent"
             android:background="#80ffffff" />
 
-        <androidx.appcompat.widget.AppCompatImageView
-            android:id="@+id/bt_vip"
-            android:layout_width="40dp"
-            android:layout_height="40dp"
-            app:srcCompat="@drawable/minimize_donate" />
+
     </FrameLayout>
 
 
@@ -44,148 +89,83 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:orientation="horizontal"
-        app:layout_constraintBottom_toBottomOf="@+id/ll_action_buttons"
+        app:layout_constraintBottom_toBottomOf="parent"
         app:layout_constraintLeft_toLeftOf="parent"
         app:layout_constraintRight_toRightOf="parent"
         app:layout_constraintTop_toBottomOf="@id/fl_drawing_view_container">
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="2dp"
             android:background="@color/skin"
-            android:contentDescription="color_pallet"
             android:onClick="paintClicked"
-            android:src="@drawable/pallet_normal"
             android:tag="@color/skin" />
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="2dp"
             android:background="@color/black"
-            android:contentDescription="color_pallet"
             android:onClick="paintClicked"
-            android:src="@drawable/pallet_normal"
             android:tag="@color/black" />
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="2dp"
-            android:background="@color/blue"
-            android:contentDescription="color_pallet"
+            android:background="@color/color_3"
             android:onClick="paintClicked"
-            android:src="@drawable/pallet_normal"
-            android:tag="@color/blue" />
+            android:tag="@color/color_3" />
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="2dp"
-            android:background="@color/sky_blue"
-            android:contentDescription="color_pallet"
+            android:background="@color/color_5"
             android:onClick="paintClicked"
-            android:src="@drawable/pallet_normal"
-            android:tag="@color/sky_blue" />
+            android:tag="@color/color_5" />
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="2dp"
-            android:background="@color/random"
-            android:contentDescription="color_pallet"
+            android:background="@color/color_6"
             android:onClick="paintClicked"
-            android:src="@drawable/pallet_normal"
-            android:tag="@color/random" />
+            android:tag="@color/color_6" />
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="2dp"
-            android:background="@color/red"
-            android:contentDescription="color_pallet"
+            android:background="@color/color_1"
             android:onClick="paintClicked"
-            android:src="@drawable/pallet_normal"
-            android:tag="@color/red" />
+            android:tag="@color/color_1" />
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="2dp"
-            android:background="@color/yellow"
-            android:contentDescription="color_pallet"
+            android:background="@color/color_4"
             android:onClick="paintClicked"
-            android:src="@drawable/pallet_normal"
-            android:tag="@color/yellow" />
+            android:tag="@color/color_4" />
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="2dp"
-            android:background="@color/green"
-            android:contentDescription="color_pallet"
+            android:background="@color/color_2"
             android:onClick="paintClicked"
-            android:src="@drawable/pallet_normal"
-            android:tag="@color/green" />
+            android:tag="@color/color_2" />
 
-        <ImageButton
+        <androidx.appcompat.widget.AppCompatImageButton
             android:layout_width="25dp"
             android:layout_height="25dp"
             android:layout_margin="2dp"
             android:background="@color/white"
-            android:contentDescription="color_pallet"
             android:onClick="paintClicked"
-            android:src="@drawable/pallet_normal"
             android:tag="@color/white" />
 
-    </LinearLayout>
-
-    <LinearLayout
-        android:id="@+id/ll_action_buttons"
-        android:layout_width="match_parent"
-        android:layout_height="wrap_content"
-        android:gravity="center"
-        app:layout_constraintBottom_toBottomOf="parent"
-        app:layout_constraintLeft_toLeftOf="parent"
-        app:layout_constraintRight_toRightOf="parent"
-        app:layout_constraintTop_toBottomOf="@id/ll_paint_colors">
-
-        <ImageButton
-            android:id="@+id/ib_brush"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:contentDescription="brush image"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_brush" />
-
-        <ImageButton
-            android:id="@+id/ib_undo"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:contentDescription="undo image"
-            android:scaleType="fitXY"
-            android:src="@drawable/undo" />
-
-        <ImageButton
-            android:id="@+id/ib_gallery"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:contentDescription="Gallery image"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_gallery" />
-
-        <ImageButton
-            android:id="@+id/ib_save"
-            android:layout_width="50dp"
-            android:layout_height="50dp"
-            android:layout_margin="5dp"
-            android:contentDescription="Save image"
-            android:scaleType="fitXY"
-            android:src="@drawable/ic_save" />
     </LinearLayout>
 
 

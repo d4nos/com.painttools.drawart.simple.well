@@ -39,7 +39,7 @@ public class DrawArtProUtil {
     }
 
     public static String getPack(int number) {
-        return BuildConfig.DEBUG ? MINIMIZE_PRO_TEST : PREFIX + number;
+        return BuildConfig.DEBUG ? PRO_PAINT_SIMPLE_1_TEST : PREFIX + number;
     }
 
     public void initBill(Context context) {
@@ -63,15 +63,15 @@ public class DrawArtProUtil {
             }
             return;
         }
-        Log.i("minimizing: ", MINIMIZE_PRO_1 + " " + MINIMIZE_PRO_2 + " " + MINIMIZE_PRO_3 + " " + MINIMIZE_PRO_4);
+        Log.i("pro_paint_simple: ", PRO_PAINT_SIMPLE_1_1 + " " + PRO_PAINT_SIMPLE_1_2 + " " + PRO_PAINT_SIMPLE_1_3 + " " + PRO_PAINT_SIMPLE_1_4);
         SkuDetailsParams.Builder params = SkuDetailsParams.newBuilder();
-        params.setSkusList(Arrays.asList(MINIMIZE_PRO_1, MINIMIZE_PRO_2, MINIMIZE_PRO_3, MINIMIZE_PRO_4))
+        params.setSkusList(Arrays.asList(PRO_PAINT_SIMPLE_1_1, PRO_PAINT_SIMPLE_1_2, PRO_PAINT_SIMPLE_1_3, PRO_PAINT_SIMPLE_1_4))
                 .setType(BillingClient.SkuType.INAPP);
         billing.querySkuDetailsAsync(params.build(),
                 (billingResult12, skuDetailsList) -> {
                     DrawArtProUtil.this.skus = skuDetailsList;
                     for (SkuDetails skuDetails : skus) {
-                        Log.i("minimizing:", " " + skuDetails.getSku());
+                        Log.i("pro_paint_simple:", " " + skuDetails.getSku());
                     }
                     DrawArtProLog.debug(billingResult12.getResponseCode());
                     if (stateListener != null) {
@@ -225,7 +225,7 @@ public class DrawArtProUtil {
 
 
     public String price(String productId) {
-        Log.i("minimizing: ", productId);
+        Log.i("pro_paint_simple: ", productId);
         String defaults = "0";
         if (billing == null || !billing.isReady()) {
             return defaults;
@@ -238,18 +238,18 @@ public class DrawArtProUtil {
         return defaults;
     }
 
-    public static final String MINIMIZE_PRO_TEST = "android.test.purchased";
-    public static final String PREFIX = BuildConfig.DEBUG ? MINIMIZE_PRO_TEST : "minimize_pro_";
+    public static final String PRO_PAINT_SIMPLE_1_TEST = "android.test.purchased";
+    public static final String PREFIX = BuildConfig.DEBUG ? PRO_PAINT_SIMPLE_1_TEST : "pro_paint_simple_";
 
-    public static final String MINIMIZE_PRO_1 = BuildConfig.DEBUG ? MINIMIZE_PRO_TEST : PREFIX + "1";
-    public static final String MINIMIZE_PRO_2 = BuildConfig.DEBUG ? MINIMIZE_PRO_TEST : PREFIX + "2";
-    public static final String MINIMIZE_PRO_3 = BuildConfig.DEBUG ? MINIMIZE_PRO_TEST : PREFIX + "3";
+    public static final String PRO_PAINT_SIMPLE_1_1 = BuildConfig.DEBUG ? PRO_PAINT_SIMPLE_1_TEST : PREFIX + "1";
+    public static final String PRO_PAINT_SIMPLE_1_2 = BuildConfig.DEBUG ? PRO_PAINT_SIMPLE_1_TEST : PREFIX + "2";
+    public static final String PRO_PAINT_SIMPLE_1_3 = BuildConfig.DEBUG ? PRO_PAINT_SIMPLE_1_TEST : PREFIX + "3";
 
     private BillingClient billing;
     private BillingClientStateListener stateListener;
     private static DrawArtProUtil instance;
     private List<SkuDetails> skus = new ArrayList<>();
 
-    public static final String MINIMIZE_PRO_4 = BuildConfig.DEBUG ? MINIMIZE_PRO_TEST : PREFIX + "4";
+    public static final String PRO_PAINT_SIMPLE_1_4 = BuildConfig.DEBUG ? PRO_PAINT_SIMPLE_1_TEST : PREFIX + "4";
 
 }

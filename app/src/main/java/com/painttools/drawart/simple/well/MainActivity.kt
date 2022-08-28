@@ -22,7 +22,7 @@ import androidx.core.view.get
 import com.painttools.drawart.simple.well.drawartdonate.DrawArtProActivity
 import com.painttools.drawart.simple.well.drawartdonate.DrawArtProUtil
 import kotlinx.android.synthetic.main.activity_main.*
-import kotlinx.android.synthetic.main.dailog_brush_size.*
+import kotlinx.android.synthetic.main.drawart_brushsize.*
 import java.io.ByteArrayOutputStream
 import java.io.File
 import java.io.FileOutputStream
@@ -38,7 +38,7 @@ class MainActivity : AppCompatActivity() {
         DrawArtProUtil.init(this)
         mImageButtonCurrentPaint = ll_paint_colors[1] as ImageButton
         mImageButtonCurrentPaint!!.setImageDrawable(
-            ContextCompat.getDrawable(this, R.drawable.pallet_pressed)
+            ContextCompat.getDrawable(this, R.drawable.drawart_pallet_normal)
         )
 
         bt_vip.setOnClickListener {
@@ -93,7 +93,7 @@ class MainActivity : AppCompatActivity() {
 
     private fun showBrushSizeChooserDialog() {
         val brushDialog = Dialog(this)
-        brushDialog.setContentView(R.layout.dailog_brush_size)
+        brushDialog.setContentView(R.layout.drawart_brushsize)
         brushDialog.setTitle("Brush Size: ")
         val smallBtn = brushDialog.ib_small_brush
         val mediumBtn = brushDialog.ib_medium_brush
@@ -114,18 +114,19 @@ class MainActivity : AppCompatActivity() {
     }
 
     fun paintClicked(view: View) {
-        if (view !== mImageButtonCurrentPaint) {
-            val imageButton = view as ImageButton
-            val colorTag = imageButton.tag.toString()
-            drawing_view.setColor(colorTag)
-            imageButton.setImageDrawable(
-                ContextCompat.getDrawable(this, R.drawable.pallet_pressed)
-            )
-            mImageButtonCurrentPaint!!.setImageDrawable(
-                ContextCompat.getDrawable(this, R.drawable.pallet_normal)
-            )
-            mImageButtonCurrentPaint = view
+        if (view === mImageButtonCurrentPaint) {
+            return
         }
+        val imageButton = view as ImageButton
+        val colorTag = imageButton.tag.toString()
+        drawing_view.setColor(colorTag)
+        imageButton.setImageDrawable(
+            ContextCompat.getDrawable(this, R.drawable.drawart_pallet_none)
+        )
+        mImageButtonCurrentPaint!!.setImageDrawable(
+            ContextCompat.getDrawable(this, R.drawable.drawart_pallet_normal)
+        )
+        mImageButtonCurrentPaint = view
     }
 
     private fun requestStoragePermission() {

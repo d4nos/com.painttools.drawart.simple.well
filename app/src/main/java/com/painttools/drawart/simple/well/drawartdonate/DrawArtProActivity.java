@@ -30,6 +30,9 @@ public class DrawArtProActivity extends DrawArtProBase {
         setTitle("アプリに寄付する");
         initBilling();
 
+        findViewById(R.id.bt_close).setOnClickListener(v -> {
+            finish();
+        });
         toolbar();
 
     }
